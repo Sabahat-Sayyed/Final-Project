@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Professors</h1>
+<table border="3px" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specialization</th>
+      <th>contact</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professors.each do |professor| %>
+      <tr>
+        <td><%= professor.name %></td>
+        <td><%= professor.specialization %></td>
+        <td><%= professor.time %></td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Professor', new_professor_path, class: "btn btn-success" %>

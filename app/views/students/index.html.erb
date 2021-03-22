@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Students</h1>
+<div class="flickr_pagination">
+<%= will_paginate @Student %>
+</div>
+<table border="3px" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Contact</th>
+      <th>Project</th>
+      <th>Date</th>
+      
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.department %></td>
+        <td><%= student.contact %></td>
+        <td><%= student.project %></td>
+        <td><%= student.date %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path, class: "btn btn-success" %>
